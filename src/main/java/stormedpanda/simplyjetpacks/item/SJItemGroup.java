@@ -2,8 +2,8 @@ package stormedpanda.simplyjetpacks.item;
 
 import net.minecraft.item.ItemGroup;
 import net.minecraft.item.ItemStack;
-import net.minecraft.item.Items;
 import stormedpanda.simplyjetpacks.SimplyJetpacks;
+import stormedpanda.simplyjetpacks.handlers.RegistryHandler;
 
 public class SJItemGroup extends ItemGroup {
 
@@ -13,7 +13,6 @@ public class SJItemGroup extends ItemGroup {
 
     @Override
     public ItemStack createIcon() {
-        //return new ItemStack(RegistryHandler.JETPACK_CREATIVE.get());
-        return new ItemStack(Items.DIAMOND);
+        return new ItemStack(RegistryHandler.JETPACK_CREATIVE.asItem());
     }
 }
