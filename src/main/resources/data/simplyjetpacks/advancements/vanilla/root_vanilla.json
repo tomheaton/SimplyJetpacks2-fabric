@@ -4,10 +4,10 @@
       "item": "minecraft:elytra"
     },
     "title": {
-      "translate": "advancements.simplyjetpacks.vanilla.title"
+      "translate": "advancement.simplyjetpacks.vanilla.title"
     },
     "description": {
-      "translate": "advancements.simplyjetpacks.vanilla.description"
+      "translate": "advancement.simplyjetpacks.vanilla.description"
     },
     "frame": "task",
     "show_toast": true,

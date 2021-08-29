@@ -4,10 +4,10 @@
       "item": "simplyjetpacks:jetpack_vanilla2"
     },
     "title": {
-      "translate": "advancements.simplyjetpacks.jetpack_vanilla2.title"
+      "translate": "advancement.simplyjetpacks.jetpack_vanilla2.title"
     },
     "description": {
-      "translate": "advancements.simplyjetpacks.jetpack_vanilla2.description"
+      "translate": "advancement.simplyjetpacks.jetpack_vanilla2.description"
     },
     "frame": "task",
     "show_toast": true,

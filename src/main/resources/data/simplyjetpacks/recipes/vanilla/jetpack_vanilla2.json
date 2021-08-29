@@ -6,7 +6,7 @@
     "t t"
   ],
   "key": {
-    "g": { "item": "minecraft:iron_gold" },
+    "g": { "item": "minecraft:gold_ingot" },
     "r": { "item": "minecraft:redstone_block" },
     "j": { "item": "simplyjetpacks:jetpack_vanilla1" },
     "t": { "item": "simplyjetpacks:thruster_vanilla2" }
