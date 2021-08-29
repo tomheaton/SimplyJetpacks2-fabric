@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    " g ",
+    "gpg",
+    " g "
+  ],
+  "key": {
+    "p": { "item": "simplyjetpacks:particle_blend" },
+    "g": { "tag": "forge:glass"}
+  },
+  "result": {
+    "item": "simplyjetpacks:particle_none",
+    "count": 1
+  }
+}

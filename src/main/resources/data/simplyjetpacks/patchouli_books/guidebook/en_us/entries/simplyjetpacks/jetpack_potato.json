@@ -1,0 +1,19 @@
+{
+  "name": "Potato Jetpack",
+  "icon": "simplyjetpacks:jetpack_potato",
+  "category": "simplyjetpacks:simplyjetpacks",
+  "read_by_default": true,
+  "pages": [
+    {
+      "type": "simplyjetpacks:1_item_page",
+      "item": "simplyjetpacks:jetpack_potato",
+      "text": "This is the Potato Jetpack."
+    },
+    {
+      "type": "patchouli:crafting",
+      "text": "The recipe for this Jetpack.",
+      "recipe": "simplyjetpacks:sj/jetpack_potato",
+      "recipe2": "simplyjetpacks:sj/jetpack_potato_armored"
+    }
+  ]
+}

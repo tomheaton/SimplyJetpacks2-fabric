@@ -1,0 +1,17 @@
+{
+  "name": "Leather Strap",
+  "icon": "simplyjetpacks:leather_strap",
+  "category": "simplyjetpacks:simplyjetpacks",
+  "read_by_default": true,
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "This is the Leather Strap. It is used in every Jetpack recipe as it allows you to attach the Jetpacks to your body."
+    },
+    {
+      "type": "patchouli:crafting",
+      "recipe": "simplyjetpacks:sj/leather_strap",
+      "text": "This is the recipe."
+    }
+  ]
+}

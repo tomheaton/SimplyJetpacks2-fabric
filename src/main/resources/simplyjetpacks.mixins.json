@@ -1,0 +1,14 @@
+{
+  "required": true,
+  "minVersion": "0.8",
+  "package": "net.fabricmc.simplyjetpacks.mixin",
+  "compatibilityLevel": "JAVA_8",
+  "mixins": [
+  ],
+  "client": [
+    "net.stormedpanda.simplyjetpacks.mixin.ExampleMixin"
+  ],
+  "injectors": {
+    "defaultRequire": 1
+  }
+}
