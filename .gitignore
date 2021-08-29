@@ -8,10 +8,11 @@ classes/
 *.launch
 
 # idea
-.idea/
+logs
 *.iml
 *.ipr
 *.iws
+.idea
 
 # vscode
 .settings/
