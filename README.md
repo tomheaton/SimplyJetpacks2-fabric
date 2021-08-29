@@ -5,7 +5,7 @@
 
 ![Simply Jetpacks 2 Logo](https://raw.githubusercontent.com/tomheaton/SimplyJetpacks2-fabric/1.16/src/main/resources/assets/simplyjetpacks/logo.png "Simply Jetpacks 2 Logo")
 
-# Simply Jetpacks 2 - Fabric
+# Simply Jetpacks 2 (Fabric)
 
 Simply Jetpacks is a Minecraft Mod that adds Jetpacks and Fluxpacks with various recipes from other mods such as Thermal Expansion and EnderIO.
 
