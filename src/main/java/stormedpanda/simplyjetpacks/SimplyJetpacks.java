@@ -32,14 +32,14 @@ public class SimplyJetpacks implements ModInitializer {
 	public static String createItemModelJson(String id, String type) {
 		if ("generated".equals(type) || "handheld".equals(type)) {
 			return "{\n" +
-					"  \"parent\": \"item/" + type + "\",\n" +
-					"  \"textures\": {\n" +
-					"    \"layer0\": \"simplyjetpacks:item/" + id + "\"\n" +
-					"  }\n" +
+					"\t\"parent\": \"item/" + type + "\",\n" +
+					"\t\"textures\": {\n" +
+					"\t\t\"layer0\": \"simplyjetpacks:item/" + id + "\"\n" +
+					"\t}\n" +
 					"}";
 		} else if ("block".equals(type)) {
 			return "{\n" +
-					"  \"parent\": \"simplyjetpacks:block/" + id + "\"\n" +
+					"\t\"parent\": \"simplyjetpacks:block/" + id + "\"\n" +
 					"}";
 		}
 		else {
