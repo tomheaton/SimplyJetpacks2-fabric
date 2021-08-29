@@ -23,8 +23,12 @@
     "main": [
       "stormedpanda.simplyjetpacks.SimplyJetpacks"
     ],
-    "client": [],
-    "server": []
+    "client": [
+
+    ],
+    "server": [
+
+    ]
   },
   "mixins": [
     "simplyjetpacks.mixins.json"

@@ -6,6 +6,7 @@ import net.minecraft.util.Identifier;
 import net.minecraft.util.registry.Registry;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
+import stormedpanda.simplyjetpacks.handlers.RegistryHandler;
 import stormedpanda.simplyjetpacks.item.SJItem;
 import stormedpanda.simplyjetpacks.item.SJItemGroup;
 
@@ -21,12 +22,11 @@ public class SimplyJetpacks implements ModInitializer {
 
 	public static final SJItemGroup tabSimplyJetpacks = new SJItemGroup();
 
-	public static final Item LEATHER_STRAP = new SJItem();
 
 	@Override
 	public void onInitialize() {
 		LOGGER.info("SJ2: Initialization...");
-		Registry.register(Registry.ITEM, new Identifier("simplyjetpacks", "leather_strap"), LEATHER_STRAP);
+		RegistryHandler.init();
 	}
 
 	public static String createItemModelJson(String id, String type) {

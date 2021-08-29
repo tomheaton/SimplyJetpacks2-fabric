@@ -4,9 +4,13 @@
   "package": "stormedpanda.simplyjetpacks.mixin",
   "compatibilityLevel": "JAVA_8",
   "mixins": [
-    "ModelLoaderMixin"
+
   ],
   "client": [
+
+  ],
+  "server": [
+
   ],
   "injectors": {
     "defaultRequire": 1
