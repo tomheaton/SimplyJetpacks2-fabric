@@ -6,8 +6,8 @@
     "t t"
   ],
   "key": {
-    "g": { "tag": "forge:ingots/gold" },
-    "r": { "tag": "forge:storage_blocks/redstone" },
+    "g": { "item": "minecraft:iron_gold" },
+    "r": { "item": "minecraft:redstone_block" },
     "j": { "item": "simplyjetpacks:jetpack_vanilla1" },
     "t": { "item": "simplyjetpacks:thruster_vanilla2" }
   },

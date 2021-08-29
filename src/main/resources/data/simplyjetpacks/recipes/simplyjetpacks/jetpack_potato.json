@@ -6,10 +6,10 @@
     "r r"
   ],
   "key": {
-    "s": { "tag": "forge:string" },
-    "g": { "tag": "forge:nuggets/gold" },
-    "p": { "tag": "forge:crops/potato" },
-    "r": { "tag": "forge:dusts/redstone" }
+    "s": { "item": "minecraft:string" },
+    "g": { "item": "minecraft:gold_nugget" },
+    "p": { "item": "minecraft:potato" },
+    "r": { "item": "minecraft:redstone" }
   },
   "result": {
     "item": "simplyjetpacks:jetpack_potato",

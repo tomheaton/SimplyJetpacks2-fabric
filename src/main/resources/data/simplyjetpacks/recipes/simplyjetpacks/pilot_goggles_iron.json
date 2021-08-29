@@ -6,8 +6,8 @@
   ],
   "key": {
     "s": { "item": "simplyjetpacks:leather_strap" },
-    "i": { "tag": "forge:ingots/iron" },
-    "g": { "tag": "forge:glass_panes" }
+    "i": { "item": "minecraft:iron_ingot" },
+    "g": { "item": "minecraft:glass_pane" }
   },
   "result": {
     "item": "simplyjetpacks:pilot_goggles_iron",

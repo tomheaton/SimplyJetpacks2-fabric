@@ -12,8 +12,8 @@ public class RegistryHandler {
     public static final SJItem LEATHER_STRAP = new SJItem();
     public static final SJItem PARTICLE_BLEND = new SJItem();
     public static final SJItem PARTICLE_NONE = new SJItem();
-    public static final SJItem PARTICLE_SMOKE = new SJItem();
     public static final SJItem PARTICLE_FLAME = new SJItem();
+    public static final SJItem PARTICLE_SMOKE = new SJItem();
     public static final SJItem PARTICLE_RAINBOW = new SJItem();
     public static final SJItem PARTICLE_SOUL = new SJItem();
     public static final SJItem PARTICLE_SNOW = new SJItem();
@@ -42,8 +42,8 @@ public class RegistryHandler {
         Registry.register(Registry.ITEM, new Identifier("simplyjetpacks", "leather_strap"), LEATHER_STRAP);
         Registry.register(Registry.ITEM, new Identifier("simplyjetpacks", "particle_blend"), PARTICLE_BLEND);
         Registry.register(Registry.ITEM, new Identifier("simplyjetpacks", "particle_none"), PARTICLE_NONE);
-        Registry.register(Registry.ITEM, new Identifier("simplyjetpacks", "particle_smoke"), PARTICLE_SMOKE);
         Registry.register(Registry.ITEM, new Identifier("simplyjetpacks", "particle_flame"), PARTICLE_FLAME);
+        Registry.register(Registry.ITEM, new Identifier("simplyjetpacks", "particle_smoke"), PARTICLE_SMOKE);
         Registry.register(Registry.ITEM, new Identifier("simplyjetpacks", "particle_rainbow"), PARTICLE_RAINBOW);
         Registry.register(Registry.ITEM, new Identifier("simplyjetpacks", "particle_soul"), PARTICLE_SOUL);
         Registry.register(Registry.ITEM, new Identifier("simplyjetpacks", "particle_snow"), PARTICLE_SNOW);

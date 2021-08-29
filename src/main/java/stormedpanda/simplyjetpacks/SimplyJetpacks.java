@@ -1,6 +1,7 @@
 package stormedpanda.simplyjetpacks;
 
 import net.fabricmc.api.ModInitializer;
+import net.fabricmc.loader.api.FabricLoader;
 import net.minecraft.util.Identifier;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -28,7 +29,7 @@ public class SimplyJetpacks implements ModInitializer {
 	public void onInitialize() {
 		LOGGER.info("SJ2: Initialization...");
 		RegistryHandler.init();
-		if (true){//ModList.get().isLoaded("curios")) {
+		if (FabricLoader.getInstance().isModLoaded("curios")) {
 			CuriosApi.enqueueSlotType(SlotTypeInfo.BuildScheme.REGISTER, SlotTypePreset.HEAD.getInfoBuilder().build());
 			CuriosApi.enqueueSlotType(SlotTypeInfo.BuildScheme.REGISTER, new SlotTypeInfo.Builder("jetpack").size(1).icon(JETPACK_SLOT).build());
 		}

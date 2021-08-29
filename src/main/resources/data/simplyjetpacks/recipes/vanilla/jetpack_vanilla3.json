@@ -6,8 +6,8 @@
     "t t"
   ],
   "key": {
-    "d": { "tag": "forge:gems/diamond" },
-    "r": { "tag": "forge:storage_blocks/redstone" },
+    "d": { "item": "minecraft:diamond" },
+    "r": { "item": "minecraft:redstone_block" },
     "j": { "item": "simplyjetpacks:jetpack_vanilla2" },
     "t": { "item": "simplyjetpacks:thruster_vanilla3" }
   },

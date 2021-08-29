@@ -6,7 +6,7 @@
     "gbg"
   ],
   "key": {
-    "g": { "tag": "forge:ingots/gold" },
+    "g": { "item": "minecraft:gold_ingot" },
     "f": { "item": "minecraft:furnace" },
     "b": { "item": "minecraft:blaze_powder"}
   },

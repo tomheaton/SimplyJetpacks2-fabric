@@ -7,7 +7,7 @@
   ],
   "key": {
     "p": { "item": "simplyjetpacks:particle_blend" },
-    "g": { "tag": "forge:glass"}
+    "g": { "item": "minecraft:glass"}
   },
   "result": {
     "item": "simplyjetpacks:particle_none",

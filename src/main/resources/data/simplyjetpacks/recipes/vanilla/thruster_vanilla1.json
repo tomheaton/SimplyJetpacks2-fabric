@@ -6,7 +6,7 @@
     "ibi"
   ],
   "key": {
-    "i": { "tag": "forge:ingots/iron" },
+    "i": { "item": "minecraft:iron_ingot" },
     "f": { "item": "minecraft:furnace" },
     "b": { "item": "minecraft:blaze_powder"}
   },
