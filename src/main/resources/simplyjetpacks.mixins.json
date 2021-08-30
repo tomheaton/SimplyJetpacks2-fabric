@@ -4,13 +4,13 @@
   "package": "stormedpanda.simplyjetpacks.mixin",
   "compatibilityLevel": "JAVA_8",
   "mixins": [
-
   ],
   "client": [
-
+    "ArmorStandRenderMixin",
+    "PlayerRenderMixin",
+    "ArmorFeatureRendererMixin"
   ],
   "server": [
-
   ],
   "injectors": {
     "defaultRequire": 1

@@ -7,7 +7,7 @@
   ],
   "key": {
     "n": { "item": "minecraft:netherite_ingot" },
-    "r": { "tag": "forge:storage_blocks/redstone" },
+    "r": { "item": "minecraft:redstone_block" },
     "j": { "item": "simplyjetpacks:jetpack_vanilla3" },
     "t": { "item": "simplyjetpacks:thruster_vanilla4" }
   },

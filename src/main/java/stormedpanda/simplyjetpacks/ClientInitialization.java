@@ -10,6 +10,7 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.text.LiteralText;
 import org.lwjgl.glfw.GLFW;
 import stormedpanda.simplyjetpacks.item.JetpackItem;
+import stormedpanda.simplyjetpacks.sound.SJSoundEvents;
 import stormedpanda.simplyjetpacks.util.JetpackUtil;
 
 public class ClientInitialization implements ClientModInitializer {
@@ -23,6 +24,8 @@ public class ClientInitialization implements ClientModInitializer {
     @Override
     public void onInitializeClient() {
 
+        SJSoundEvents.init();
+
         JETPACK_GUI_KEY = new KeyBinding("keybind.simplyjetpacks.jetpack_gui", GLFW.GLFW_KEY_K, "keybind.simplyjetpacks.category");
         KeyBindingHelper.registerKeyBinding(JETPACK_GUI_KEY);
         JETPACK_ENGINE_KEY = new KeyBinding("keybind.simplyjetpacks.jetpack_engine", GLFW.GLFW_KEY_J, "keybind.simplyjetpacks.category");
@@ -33,7 +36,6 @@ public class ClientInitialization implements ClientModInitializer {
         KeyBindingHelper.registerKeyBinding(JETPACK_EHOVER_KEY);
         JETPACK_CHARGER_KEY = new KeyBinding("keybind.simplyjetpacks.jetpack_charger", GLFW.GLFW_KEY_UNKNOWN, "keybind.simplyjetpacks.category");
         KeyBindingHelper.registerKeyBinding(JETPACK_CHARGER_KEY);
-
 
         ClientTickEvents.END_CLIENT_TICK.register(client -> {
             PlayerEntity player = client.player;
@@ -68,6 +70,11 @@ public class ClientInitialization implements ClientModInitializer {
                 }
             }
         });
+
+        //ArmorRenderingRegistry.registerSimpleTexture(new Identifier(SimplyJetpacks.MODID, "pilot_goggles_gold"), RegistryHandler.PILOT_GOGGLES_GOLD);
+        //ArmorRenderingRegistry.registerSimpleTexture(new Identifier(SimplyJetpacks.MODID, "pilot_goggles_iron"), RegistryHandler.PILOT_GOGGLES_IRON);
+
+        //ArmorRenderingRegistry.registerTexture();
 
     }
     /*

@@ -5,8 +5,8 @@
     "lil"
   ],
   "key": {
-    "l": { "tag": "forge:leather" },
-    "i": { "tag": "forge:ingots/iron" }
+    "l": { "item": "minecraft:leather" },
+    "i": { "item": "minecraft:iron_ingot" }
   },
   "result": {
     "item": "simplyjetpacks:leather_strap",

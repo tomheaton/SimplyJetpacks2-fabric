@@ -5,10 +5,10 @@
       "item": "simplyjetpacks:jetpack_creative"
     },
     "title": {
-      "translate": "advancements.simplyjetpacks.root.title"
+      "translate": "advancement.simplyjetpacks.root.title"
     },
     "description": {
-      "translate": "advancements.simplyjetpacks.root.description"
+      "translate": "advancement.simplyjetpacks.root.description"
     },
     "frame": "challenge",
     "show_toast": true,
