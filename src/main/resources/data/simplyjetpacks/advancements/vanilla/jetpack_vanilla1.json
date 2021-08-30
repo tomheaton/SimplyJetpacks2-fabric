@@ -33,5 +33,5 @@
   "rewards": {
     "experience": 1
   },
-  "parent": "simplyjetpacks:vanilla/root_vanilla"
+  "parent": "simplyjetpacks:root"
 }
