@@ -29,15 +29,4 @@ public class PilotGogglesItem extends ArmorItem {
     public void appendTooltip(ItemStack stack, @Nullable World world, List<Text> tooltip, TooltipContext context) {
         tooltip.add(SJTextUtil.translate("tooltip", "pilot_goggles"));
     }
-
-    /*    @Nullable
-    @Override
-    public String getArmorTexture(ItemStack stack, Entity entity, EquipmentSlotType slot, String type) {
-        return new ResourceLocation(SimplyJetpacks.MODID, "textures/models/armor/pilot_goggles_" + this.type).toString();
-    }
-
-    @Override
-    public void appendHoverText(ItemStack stack, @Nullable World worldIn, List<ITextComponent> tooltip, ITooltipFlag flagIn) {
-        tooltip.add(SJTextUtil.translate("tooltip", "pilot_goggles"));
-    }*/
 }

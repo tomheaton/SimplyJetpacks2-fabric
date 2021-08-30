@@ -13,6 +13,7 @@ import net.minecraft.util.Identifier;
 import org.lwjgl.glfw.GLFW;
 import stormedpanda.simplyjetpacks.handlers.RegistryHandler;
 import stormedpanda.simplyjetpacks.item.JetpackItem;
+import stormedpanda.simplyjetpacks.model.JetpackModelProvider;
 import stormedpanda.simplyjetpacks.sound.SJSoundEvents;
 import stormedpanda.simplyjetpacks.util.JetpackUtil;
 
@@ -75,15 +76,25 @@ public class ClientInitialization implements ClientModInitializer {
             }
         });
 
-        // Register Pilot Goggles textures.
-        ArmorRenderingRegistry.registerSimpleTexture(new Identifier(SimplyJetpacks.MODID, "pilot_goggles_gold"), RegistryHandler.PILOT_GOGGLES_GOLD);
-        ArmorRenderingRegistry.registerSimpleTexture(new Identifier(SimplyJetpacks.MODID, "pilot_goggles_iron"), RegistryHandler.PILOT_GOGGLES_IRON);
+        // Register Pilot Goggles textures:
+        registerSimpleArmorTexture("pilot_goggles_gold", RegistryHandler.PILOT_GOGGLES_GOLD);
+        registerSimpleArmorTexture("pilot_goggles_iron", RegistryHandler.PILOT_GOGGLES_IRON);
 
-        // Register Jetpack textures.
-        ArmorRenderingRegistry.registerSimpleTexture(new Identifier(SimplyJetpacks.MODID, "pilot_goggles_gold"), RegistryHandler.PILOT_GOGGLES_GOLD);
-        ArmorRenderingRegistry.registerSimpleTexture(new Identifier(SimplyJetpacks.MODID, "pilot_goggles_iron"), RegistryHandler.PILOT_GOGGLES_IRON);
+        // Register Jetpack textures:
+        registerSimpleArmorTexture("jetpack_potato", RegistryHandler.JETPACK_POTATO);
+        registerSimpleArmorTexture("jetpack_creative", RegistryHandler.JETPACK_CREATIVE);
+        registerSimpleArmorTexture("jetpack_creative_armored", RegistryHandler.JETPACK_CREATIVE_ARMORED);
+        registerSimpleArmorTexture("jetpack_vanilla1", RegistryHandler.JETPACK_VANILLA1);
+        registerSimpleArmorTexture("jetpack_vanilla1_armored", RegistryHandler.JETPACK_VANILLA1_ARMORED);
+        registerSimpleArmorTexture("jetpack_vanilla2", RegistryHandler.JETPACK_VANILLA2);
+        registerSimpleArmorTexture("jetpack_vanilla2_armored", RegistryHandler.JETPACK_VANILLA2_ARMORED);
+        registerSimpleArmorTexture("jetpack_vanilla3", RegistryHandler.JETPACK_VANILLA3);
+        registerSimpleArmorTexture("jetpack_vanilla3_armored", RegistryHandler.JETPACK_VANILLA3_ARMORED);
+        registerSimpleArmorTexture("jetpack_vanilla4", RegistryHandler.JETPACK_VANILLA4);
+        registerSimpleArmorTexture("jetpack_vanilla4_armored", RegistryHandler.JETPACK_VANILLA4_ARMORED);
 
-        //ArmorRenderingRegistry.registerTexture();
+        // Register Jetpack models:
+        ArmorRenderingRegistry.registerModel(new JetpackModelProvider(), RegistryHandler.JETPACK_CREATIVE);
 
     }
     /*
@@ -115,4 +126,16 @@ public class ClientInitialization implements ClientModInitializer {
             tickEnd();
         }
     }*/
+
+    private static void registerSimpleArmorTexture(String name, Item item) {
+        //ArmorRenderingRegistry.registerSimpleTexture(new Identifier(SimplyJetpacks.MODID, name), item);
+        registerTexture(name, new Identifier(SimplyJetpacks.MODID, name), item);
+    }
+
+    private static void registerTexture(String name, Identifier identifier, Item... items) {
+        ArmorRenderingRegistry.registerTexture((entity, stack, slot, secondLayer, suffix, defaultTexture) -> {
+            //return new Identifier(identifier.getNamespace(), "textures/models/armor/" + identifier.getPath() + "_layer_" + (secondLayer ? 2 : 1) + (suffix == null ? "" : "_" + suffix) + ".png");
+            return new Identifier(SimplyJetpacks.MODID, "textures/models/armor/" + name + ".png");
+        }, items);
+    }
 }
