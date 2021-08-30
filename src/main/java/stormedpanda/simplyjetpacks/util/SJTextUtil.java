@@ -1,7 +1,10 @@
 package stormedpanda.simplyjetpacks.util;
 
 import net.minecraft.item.ItemStack;
-import net.minecraft.text.*;
+import net.minecraft.text.LiteralText;
+import net.minecraft.text.Style;
+import net.minecraft.text.Text;
+import net.minecraft.text.TranslatableText;
 import net.minecraft.util.Formatting;
 import stormedpanda.simplyjetpacks.SimplyJetpacks;
 import stormedpanda.simplyjetpacks.item.JetpackItem;

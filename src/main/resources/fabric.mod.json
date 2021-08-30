@@ -27,7 +27,6 @@
       "stormedpanda.simplyjetpacks.ClientInitialization"
     ],
     "server": [
-
     ]
   },
   "mixins": [

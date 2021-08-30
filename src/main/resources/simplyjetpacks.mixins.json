@@ -4,11 +4,9 @@
   "package": "stormedpanda.simplyjetpacks.mixin",
   "compatibilityLevel": "JAVA_8",
   "mixins": [
+    "ArmorItemMixin"
   ],
   "client": [
-    "ArmorStandRenderMixin",
-    "PlayerRenderMixin",
-    "ArmorFeatureRendererMixin"
   ],
   "server": [
   ],

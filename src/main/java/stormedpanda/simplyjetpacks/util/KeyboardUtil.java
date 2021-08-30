@@ -1,7 +1,5 @@
 package stormedpanda.simplyjetpacks.util;
 
-import org.lwjgl.glfw.GLFW;
-
 public class KeyboardUtil {
 
     //private static final long MINECRAFT_WINDOW = Minecraft.getInstance().getWindow().getWindow();

@@ -17,6 +17,7 @@ public class SJSoundEvents {
     }
 
     public static void init() {
+        SimplyJetpacks.LOGGER.info("Initializing Sound Events");
         JETPACK = register("jetpack");
         JETPACK_OTHER = register("jetpack_other");
         ROCKET = register("rocket");

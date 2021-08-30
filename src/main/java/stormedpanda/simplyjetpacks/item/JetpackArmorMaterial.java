@@ -72,7 +72,8 @@ public enum JetpackArmorMaterial implements ArmorMaterial {
 
 	@Override
 	public String getName() {
-		return SimplyJetpacks.MODID + ":" + this.name;
+		//return SimplyJetpacks.MODID + ":" + this.name;
+		return this.name;
 	}
 
 	@Override

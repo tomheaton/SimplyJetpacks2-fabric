@@ -1,11 +1,5 @@
 package stormedpanda.simplyjetpacks.util;
 
-import net.minecraft.client.util.math.Vector3d;
-import net.minecraft.entity.Entity;
-import net.minecraft.nbt.Tag;
-import net.minecraft.util.math.MathHelper;
-import net.minecraft.util.math.Quaternion;
-
 /*
  *
  * Pos3D - a way of performing operations on objects in a three dimensional environment.

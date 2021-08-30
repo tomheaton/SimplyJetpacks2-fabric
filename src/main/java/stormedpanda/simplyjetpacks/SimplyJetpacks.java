@@ -1,12 +1,14 @@
 package stormedpanda.simplyjetpacks;
 
 import net.fabricmc.api.ModInitializer;
+import net.fabricmc.fabric.api.client.itemgroup.FabricItemGroupBuilder;
 import net.fabricmc.loader.api.FabricLoader;
+import net.minecraft.item.ItemGroup;
+import net.minecraft.item.ItemStack;
 import net.minecraft.util.Identifier;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import stormedpanda.simplyjetpacks.handlers.RegistryHandler;
-import stormedpanda.simplyjetpacks.item.SJItemGroup;
 import top.theillusivec4.curios.api.CuriosApi;
 import top.theillusivec4.curios.api.SlotTypeInfo;
 import top.theillusivec4.curios.api.SlotTypePreset;
@@ -21,13 +23,15 @@ public class SimplyJetpacks implements ModInitializer {
 
 	public static final Logger LOGGER = LogManager.getLogger();
 
-	public static final SJItemGroup tabSimplyJetpacks = new SJItemGroup();
+	//public static final SJItemGroup tabSimplyJetpacks = new SJItemGroup();
+	public static final ItemGroup tabSimplyJetpacks = FabricItemGroupBuilder.build(new Identifier(MODID, "main"), () -> new ItemStack(RegistryHandler.JETPACK_CREATIVE));
 
 	public static final Identifier JETPACK_SLOT = new Identifier(MODID, "gui/empty_jetpack_slot");
 
 	@Override
 	public void onInitialize() {
-		LOGGER.info("SJ2: Initialization...");
+		SimplyJetpacks.LOGGER.info("Initializing Mod");
+
 		RegistryHandler.init();
 		if (FabricLoader.getInstance().isModLoaded("curios")) {
 			CuriosApi.enqueueSlotType(SlotTypeInfo.BuildScheme.REGISTER, SlotTypePreset.HEAD.getInfoBuilder().build());

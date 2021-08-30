@@ -8,7 +8,7 @@ import stormedpanda.simplyjetpacks.handlers.RegistryHandler;
 public class SJItemGroup extends ItemGroup {
 
     public SJItemGroup() {
-        super(1, SimplyJetpacks.MODID + ".main");
+        super(999, SimplyJetpacks.MODID + ".main");
     }
 
     @Override

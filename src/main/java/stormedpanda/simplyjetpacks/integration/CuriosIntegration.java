@@ -1,19 +1,5 @@
 package stormedpanda.simplyjetpacks.integration;
 
-import net.minecraft.client.render.OverlayTexture;
-import net.minecraft.client.render.item.ItemRenderer;
-import net.minecraft.client.util.math.MatrixStack;
-import net.minecraft.entity.LivingEntity;
-import net.minecraft.entity.player.PlayerEntity;
-import net.minecraft.item.ArmorItem;
-import net.minecraft.item.ItemStack;
-import net.minecraft.sound.SoundCategory;
-import stormedpanda.simplyjetpacks.SimplyJetpacks;
-import stormedpanda.simplyjetpacks.item.JetpackItem;
-import stormedpanda.simplyjetpacks.item.PilotGogglesItem;
-import stormedpanda.simplyjetpacks.model.JetpackModel;
-import top.theillusivec4.curios.api.type.component.ICurio;
-
 public class CuriosIntegration {
 
     /*public static ICapabilityProvider initGogglesCapabilities(ItemStack itemStack) {

@@ -3,12 +3,15 @@ package stormedpanda.simplyjetpacks;
 import net.fabricmc.api.ClientModInitializer;
 import net.fabricmc.fabric.api.client.event.lifecycle.v1.ClientTickEvents;
 import net.fabricmc.fabric.api.client.keybinding.v1.KeyBindingHelper;
+import net.fabricmc.fabric.api.client.rendering.v1.ArmorRenderingRegistry;
 import net.minecraft.client.options.KeyBinding;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.text.LiteralText;
+import net.minecraft.util.Identifier;
 import org.lwjgl.glfw.GLFW;
+import stormedpanda.simplyjetpacks.handlers.RegistryHandler;
 import stormedpanda.simplyjetpacks.item.JetpackItem;
 import stormedpanda.simplyjetpacks.sound.SJSoundEvents;
 import stormedpanda.simplyjetpacks.util.JetpackUtil;
@@ -23,6 +26,7 @@ public class ClientInitialization implements ClientModInitializer {
 
     @Override
     public void onInitializeClient() {
+        SimplyJetpacks.LOGGER.info("Initializing Client");
 
         SJSoundEvents.init();
 
@@ -71,8 +75,13 @@ public class ClientInitialization implements ClientModInitializer {
             }
         });
 
-        //ArmorRenderingRegistry.registerSimpleTexture(new Identifier(SimplyJetpacks.MODID, "pilot_goggles_gold"), RegistryHandler.PILOT_GOGGLES_GOLD);
-        //ArmorRenderingRegistry.registerSimpleTexture(new Identifier(SimplyJetpacks.MODID, "pilot_goggles_iron"), RegistryHandler.PILOT_GOGGLES_IRON);
+        // Register Pilot Goggles textures.
+        ArmorRenderingRegistry.registerSimpleTexture(new Identifier(SimplyJetpacks.MODID, "pilot_goggles_gold"), RegistryHandler.PILOT_GOGGLES_GOLD);
+        ArmorRenderingRegistry.registerSimpleTexture(new Identifier(SimplyJetpacks.MODID, "pilot_goggles_iron"), RegistryHandler.PILOT_GOGGLES_IRON);
+
+        // Register Jetpack textures.
+        ArmorRenderingRegistry.registerSimpleTexture(new Identifier(SimplyJetpacks.MODID, "pilot_goggles_gold"), RegistryHandler.PILOT_GOGGLES_GOLD);
+        ArmorRenderingRegistry.registerSimpleTexture(new Identifier(SimplyJetpacks.MODID, "pilot_goggles_iron"), RegistryHandler.PILOT_GOGGLES_IRON);
 
         //ArmorRenderingRegistry.registerTexture();
 

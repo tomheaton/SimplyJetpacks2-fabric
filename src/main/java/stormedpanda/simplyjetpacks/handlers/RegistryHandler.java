@@ -41,6 +41,8 @@ public class RegistryHandler {
     public static SJItem THRUSTER_VANILLA4;
     
     public static void init() {
+        SimplyJetpacks.LOGGER.info("Initializing Registry Items");
+
         LEATHER_STRAP = registerItem("leather_strap", new SJItem());
         PARTICLE_BLEND = registerItem("particle_blend", new SJItem());
         PARTICLE_NONE = registerItem("particle_none", new SJItem());
