@@ -76,13 +76,7 @@ public class RegistryHandler {
         THRUSTER_VANILLA3 = registerItem("thruster_vanilla3", new SJItem());
         THRUSTER_VANILLA4 = registerItem("thruster_vanilla4", new SJItem());
 
-
-        //public static final RegistryObject<SpecialRecipeSerializer<JetpackSpecialRecipe>> JETPACK_SPECIAL_RECIPE = RECIPE_SERIALIZERS.register("jetpack_special_recipe",() -> new SpecialRecipeSerializer<>(JetpackSpecialRecipe::new));
-
         Registry.register(Registry.RECIPE_SERIALIZER, new Identifier(SimplyJetpacks.MODID, "jetpack_special_recipe"), JETPACK_SPECIAL_RECIPE);
-
-        /*Registry.register(Registry.RECIPE_SERIALIZER, JetpackSpecialRecipeSerializer.ID, JetpackSpecialRecipeSerializer.INSTANCE);
-        Registry.register(Registry.RECIPE_TYPE, new Identifier(SimplyJetpacks.MODID, JetpackSpecialRecipe.Type.ID), JetpackSpecialRecipe.Type.INSTANCE);*/
     }
 
     public static <T extends Item> T registerItem(String name, T item) {

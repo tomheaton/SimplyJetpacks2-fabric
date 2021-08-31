@@ -1,9 +1,11 @@
 package stormedpanda.simplyjetpacks;
 
+import nerdhub.cardinal.components.api.event.ItemComponentCallbackV2;
 import net.fabricmc.api.ClientModInitializer;
 import net.fabricmc.fabric.api.client.event.lifecycle.v1.ClientTickEvents;
 import net.fabricmc.fabric.api.client.keybinding.v1.KeyBindingHelper;
 import net.fabricmc.fabric.api.client.rendering.v1.ArmorRenderingRegistry;
+import net.fabricmc.loader.api.FabricLoader;
 import net.minecraft.client.options.KeyBinding;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.Item;
@@ -12,10 +14,12 @@ import net.minecraft.text.LiteralText;
 import net.minecraft.util.Identifier;
 import org.lwjgl.glfw.GLFW;
 import stormedpanda.simplyjetpacks.handlers.RegistryHandler;
+import stormedpanda.simplyjetpacks.integration.CuriosIntegration;
 import stormedpanda.simplyjetpacks.item.JetpackItem;
 import stormedpanda.simplyjetpacks.model.JetpackModelProvider;
 import stormedpanda.simplyjetpacks.sound.SJSoundEvents;
 import stormedpanda.simplyjetpacks.util.JetpackUtil;
+import top.theillusivec4.curios.api.CuriosComponent;
 
 public class ClientInitialization implements ClientModInitializer {
 
@@ -139,11 +143,36 @@ public class ClientInitialization implements ClientModInitializer {
         ArmorRenderingRegistry.registerModel(new JetpackModelProvider(), RegistryHandler.JETPACK_CREATIVE_ARMORED);
         ArmorRenderingRegistry.registerModel(new JetpackModelProvider(), RegistryHandler.JETPACK_VANILLA1);
         ArmorRenderingRegistry.registerModel(new JetpackModelProvider(), RegistryHandler.JETPACK_VANILLA1_ARMORED);
+        ArmorRenderingRegistry.registerModel(new JetpackModelProvider(), RegistryHandler.JETPACK_VANILLA2);
         ArmorRenderingRegistry.registerModel(new JetpackModelProvider(), RegistryHandler.JETPACK_VANILLA2_ARMORED);
         ArmorRenderingRegistry.registerModel(new JetpackModelProvider(), RegistryHandler.JETPACK_VANILLA3);
         ArmorRenderingRegistry.registerModel(new JetpackModelProvider(), RegistryHandler.JETPACK_VANILLA3_ARMORED);
         ArmorRenderingRegistry.registerModel(new JetpackModelProvider(), RegistryHandler.JETPACK_VANILLA4);
         ArmorRenderingRegistry.registerModel(new JetpackModelProvider(), RegistryHandler.JETPACK_VANILLA4_ARMORED);
 
+        if (FabricLoader.getInstance().isModLoaded("curios")) {
+            ItemComponentCallbackV2.event(RegistryHandler.PILOT_GOGGLES_GOLD).register(
+                    (item, itemStack, componentContainer) -> componentContainer.put(CuriosComponent.ITEM_RENDER, CuriosIntegration.createPilotGogglesCurioRender(new ItemStack(RegistryHandler.PILOT_GOGGLES_GOLD)))
+            );
+            ItemComponentCallbackV2.event(RegistryHandler.PILOT_GOGGLES_IRON).register(
+                    (item, itemStack, componentContainer) -> componentContainer.put(CuriosComponent.ITEM_RENDER, CuriosIntegration.createPilotGogglesCurioRender(new ItemStack(RegistryHandler.PILOT_GOGGLES_IRON)))
+            );
+            createJetpackCurioRenderComponent(RegistryHandler.JETPACK_CREATIVE);
+            createJetpackCurioRenderComponent(RegistryHandler.JETPACK_CREATIVE_ARMORED);
+            createJetpackCurioRenderComponent(RegistryHandler.JETPACK_VANILLA1);
+            createJetpackCurioRenderComponent(RegistryHandler.JETPACK_VANILLA1_ARMORED);
+            createJetpackCurioRenderComponent(RegistryHandler.JETPACK_VANILLA2);
+            createJetpackCurioRenderComponent(RegistryHandler.JETPACK_VANILLA2_ARMORED);
+            createJetpackCurioRenderComponent(RegistryHandler.JETPACK_VANILLA3);
+            createJetpackCurioRenderComponent(RegistryHandler.JETPACK_VANILLA3_ARMORED);
+            createJetpackCurioRenderComponent(RegistryHandler.JETPACK_VANILLA4);
+            createJetpackCurioRenderComponent(RegistryHandler.JETPACK_VANILLA4_ARMORED);
+        }
+    }
+
+    private void createJetpackCurioRenderComponent(Item ITEM) {
+        ItemComponentCallbackV2.event(ITEM).register(
+                (item, itemStack, componentContainer) -> componentContainer.put(CuriosComponent.ITEM_RENDER, CuriosIntegration.createJetpackCurioRender(new ItemStack(ITEM)))
+        );
     }
 }
