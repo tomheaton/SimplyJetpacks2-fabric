@@ -2,22 +2,22 @@
   "schemaVersion": 1,
   "id": "modid",
   "version": "${version}",
-
   "name": "Simply Jetpacks 2",
   "description": "Simply Jetpacks 2\nJetpacks and Fluxpacks powered by Forge Energy!\nOriginal Author: tonius11",
   "authors": [
-    "StormedPanda", "Tomson124"
+    "StormedPanda",
+    "Tomson124"
   ],
-  "contributors": ["cybercat5555"],
+  "contributors": [
+    "cybercat5555"
+  ],
   "contact": {
     "homepage": "https://www.curseforge.com/minecraft/mc-mods/simply-jetpacks-2-fabric",
     "sources": "https://www.github.com/tomheaton/SimplyJetpacks2-fabric",
     "issues": "https://www.github.com/tomheaton/SimplyJetpacks2-fabric/issues"
   },
-
   "license": "The MIT License (MIT)",
   "icon": "assets/simplyjetpacks/icon.png",
-
   "environment": "*",
   "entrypoints": {
     "main": [
@@ -32,7 +32,6 @@
   "mixins": [
     "simplyjetpacks.mixins.json"
   ],
-
   "depends": {
     "minecraft": "1.16.x",
     "fabricloader": ">=0.7.4",

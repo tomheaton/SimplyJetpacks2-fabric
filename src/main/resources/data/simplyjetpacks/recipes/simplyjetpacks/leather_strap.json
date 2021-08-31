@@ -5,8 +5,12 @@
     "lil"
   ],
   "key": {
-    "l": { "item": "minecraft:leather" },
-    "i": { "item": "minecraft:iron_ingot" }
+    "l": {
+      "item": "minecraft:leather"
+    },
+    "i": {
+      "item": "minecraft:iron_ingot"
+    }
   },
   "result": {
     "item": "simplyjetpacks:leather_strap",

@@ -6,8 +6,12 @@
     " s "
   ],
   "key": {
-    "p": { "item": "simplyjetpacks:particle_blend" },
-    "s": { "item": "minecraft:snowball" }
+    "p": {
+      "item": "simplyjetpacks:particle_blend"
+    },
+    "s": {
+      "item": "minecraft:snowball"
+    }
   },
   "result": {
     "item": "simplyjetpacks:particle_snow",

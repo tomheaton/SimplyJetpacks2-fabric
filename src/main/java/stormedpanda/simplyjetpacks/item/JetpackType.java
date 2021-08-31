@@ -93,6 +93,21 @@ public enum JetpackType {
         //this.armorTexture = new ResourceLocation(("simplyjetpacks:textures/models/armor/jetpack_" + name + ".png"));
     }
 
+    public static void loadAllConfigs() {
+        for (JetpackType jetpackType : JETPACK_ALL) {
+            jetpackType.loadConfig();
+        }
+    }
+
+    public static int getDefaultParticles(ItemStack stack) {
+        /*JetpackItem item = (JetpackItem) stack.getItem();
+        if (item.isCreative() || item.getJetpackType().getName().equals("potato")) {
+            return JetpackParticleType.RAINBOW.ordinal();
+        }
+        return JetpackParticleType.FLAME.ordinal();*/
+        return 0;
+    }
+
     public String getName() {
         return name;
     }
@@ -101,6 +116,10 @@ public enum JetpackType {
         return configKey;
     }
 
+/*    public String getArmorTexture() {
+        return armorTexture.toString();
+    }*/
+
     public boolean isArmored() {
         return armored;
     }
@@ -108,10 +127,6 @@ public enum JetpackType {
     public int getPlatingId() {
         return platingId;
     }
-
-/*    public String getArmorTexture() {
-        return armorTexture.toString();
-    }*/
 
     public int getTier() {
         return tier;
@@ -196,21 +211,6 @@ public enum JetpackType {
 
     public boolean getChargerMode() {
         return chargerMode;
-    }
-
-    public static void loadAllConfigs() {
-        for (JetpackType jetpackType : JETPACK_ALL) {
-            jetpackType.loadConfig();
-        }
-    }
-
-    public static int getDefaultParticles(ItemStack stack) {
-        /*JetpackItem item = (JetpackItem) stack.getItem();
-        if (item.isCreative() || item.getJetpackType().getName().equals("potato")) {
-            return JetpackParticleType.RAINBOW.ordinal();
-        }
-        return JetpackParticleType.FLAME.ordinal();*/
-        return 0;
     }
 
     public void loadConfig() {

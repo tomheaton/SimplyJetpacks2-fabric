@@ -25,6 +25,47 @@ public class ClientInitialization implements ClientModInitializer {
     public static KeyBinding JETPACK_EHOVER_KEY;
     public static KeyBinding JETPACK_CHARGER_KEY;
 
+    private static void registerSimpleArmorTexture(String name, Item item) {
+        //ArmorRenderingRegistry.registerSimpleTexture(new Identifier(SimplyJetpacks.MODID, name), item);
+        registerTexture(name, new Identifier(SimplyJetpacks.MODID, name), item);
+    }
+    /*
+    private static void tickEnd() {
+        Minecraft mc = Minecraft.getInstance();
+        if (mc.player != null) {
+            boolean flyState = mc.player.input.jumping;
+            boolean descendState = mc.player.input.shiftKeyDown;
+            boolean forwardState = mc.player.input.up;
+            boolean backwardState = mc.player.input.down;
+            boolean leftState = mc.player.input.left;
+            boolean rightState = mc.player.input.right;
+            if (flyState != lastFlyState || descendState != lastDescendState || forwardState != lastForwardState || backwardState != lastBackwardState || leftState != lastLeftState || rightState != lastRightState) {
+                lastFlyState = flyState;
+                lastDescendState = descendState;
+                lastForwardState = forwardState;
+                lastBackwardState = backwardState;
+                lastLeftState = leftState;
+                lastRightState = rightState;
+                NetworkHandler.sendToServer(new PacketUpdateInput(flyState, descendState, forwardState, backwardState, leftState, rightState));
+                CommonJetpackHandler.update(mc.player, flyState, descendState, forwardState, backwardState, leftState, rightState);
+            }
+        }
+    }
+
+    @SubscribeEvent
+    public void onClientTick(TickEvent.ClientTickEvent evt) {
+        if (evt.phase == TickEvent.Phase.END) {
+            tickEnd();
+        }
+    }*/
+
+    private static void registerTexture(String name, Identifier identifier, Item... items) {
+        ArmorRenderingRegistry.registerTexture((entity, stack, slot, secondLayer, suffix, defaultTexture) -> {
+            //return new Identifier(identifier.getNamespace(), "textures/models/armor/" + identifier.getPath() + "_layer_" + (secondLayer ? 2 : 1) + (suffix == null ? "" : "_" + suffix) + ".png");
+            return new Identifier(SimplyJetpacks.MODID, "textures/models/armor/" + name + ".png");
+        }, items);
+    }
+
     @Override
     public void onInitializeClient() {
         SimplyJetpacks.LOGGER.info("Initializing Client");
@@ -95,47 +136,14 @@ public class ClientInitialization implements ClientModInitializer {
 
         // Register Jetpack models:
         ArmorRenderingRegistry.registerModel(new JetpackModelProvider(), RegistryHandler.JETPACK_CREATIVE);
+        ArmorRenderingRegistry.registerModel(new JetpackModelProvider(), RegistryHandler.JETPACK_CREATIVE_ARMORED);
+        ArmorRenderingRegistry.registerModel(new JetpackModelProvider(), RegistryHandler.JETPACK_VANILLA1);
+        ArmorRenderingRegistry.registerModel(new JetpackModelProvider(), RegistryHandler.JETPACK_VANILLA1_ARMORED);
+        ArmorRenderingRegistry.registerModel(new JetpackModelProvider(), RegistryHandler.JETPACK_VANILLA2_ARMORED);
+        ArmorRenderingRegistry.registerModel(new JetpackModelProvider(), RegistryHandler.JETPACK_VANILLA3);
+        ArmorRenderingRegistry.registerModel(new JetpackModelProvider(), RegistryHandler.JETPACK_VANILLA3_ARMORED);
+        ArmorRenderingRegistry.registerModel(new JetpackModelProvider(), RegistryHandler.JETPACK_VANILLA4);
+        ArmorRenderingRegistry.registerModel(new JetpackModelProvider(), RegistryHandler.JETPACK_VANILLA4_ARMORED);
 
-    }
-    /*
-    private static void tickEnd() {
-        Minecraft mc = Minecraft.getInstance();
-        if (mc.player != null) {
-            boolean flyState = mc.player.input.jumping;
-            boolean descendState = mc.player.input.shiftKeyDown;
-            boolean forwardState = mc.player.input.up;
-            boolean backwardState = mc.player.input.down;
-            boolean leftState = mc.player.input.left;
-            boolean rightState = mc.player.input.right;
-            if (flyState != lastFlyState || descendState != lastDescendState || forwardState != lastForwardState || backwardState != lastBackwardState || leftState != lastLeftState || rightState != lastRightState) {
-                lastFlyState = flyState;
-                lastDescendState = descendState;
-                lastForwardState = forwardState;
-                lastBackwardState = backwardState;
-                lastLeftState = leftState;
-                lastRightState = rightState;
-                NetworkHandler.sendToServer(new PacketUpdateInput(flyState, descendState, forwardState, backwardState, leftState, rightState));
-                CommonJetpackHandler.update(mc.player, flyState, descendState, forwardState, backwardState, leftState, rightState);
-            }
-        }
-    }
-
-    @SubscribeEvent
-    public void onClientTick(TickEvent.ClientTickEvent evt) {
-        if (evt.phase == TickEvent.Phase.END) {
-            tickEnd();
-        }
-    }*/
-
-    private static void registerSimpleArmorTexture(String name, Item item) {
-        //ArmorRenderingRegistry.registerSimpleTexture(new Identifier(SimplyJetpacks.MODID, name), item);
-        registerTexture(name, new Identifier(SimplyJetpacks.MODID, name), item);
-    }
-
-    private static void registerTexture(String name, Identifier identifier, Item... items) {
-        ArmorRenderingRegistry.registerTexture((entity, stack, slot, secondLayer, suffix, defaultTexture) -> {
-            //return new Identifier(identifier.getNamespace(), "textures/models/armor/" + identifier.getPath() + "_layer_" + (secondLayer ? 2 : 1) + (suffix == null ? "" : "_" + suffix) + ".png");
-            return new Identifier(SimplyJetpacks.MODID, "textures/models/armor/" + name + ".png");
-        }, items);
     }
 }

@@ -20,10 +20,58 @@ public class Pos3D extends Vector3d {
     }
 
     *//**
-     * Creates a Pos3D with an entity's posX, posY, and posZ values.
-     *
-     * @param entity - entity to create the Pos3D from
-     *//*
+ * Creates a Pos3D with an entity's posX, posY, and posZ values.
+ *
+ * @param entity - entity to create the Pos3D from
+ * <p>
+ * Returns a new Pos3D from a tag compound.
+ * @param tag - tag compound to read from
+ * @return the Pos3D from the tag compound
+ * <p>
+ * Writes this Pos3D's data to an CompoundNBT.
+ * @param nbtTags - tag compound to write to
+ * @return the tag compound with this Pos3D's data
+ * <p>
+ * Creates and returns a Pos3D with values representing the difference between this and the Pos3D in the parameters.
+ * @param vec - Vec3 to subtract
+ * @return difference of the two Pos3Ds
+ * <p>
+ * Centres a block-derived Pos3D
+ * <p>
+ * Translates this Pos3D by the defined values.
+ * @param x - amount to translate on the x axis
+ * @param y - amount to translate on the y axis
+ * @param z - amount to translate on the z axis
+ * @return the translated Pos3D
+ * <p>
+ * Performs the same operation as translate(x, y, z), but with a Pos3D value instead.
+ * @param pos - Pos3D value to translate by
+ * @return translated Pos3D
+ * <p>
+ * Performs the same operation as translate(x, y, z), but with multiple Pos3Ds to avoid having to create intermediary objects.
+ * @param positions - Pos3D values to translate by
+ * @return translated Pos3D
+ * <p>
+ * Performs the same operation as translate(x, y, z), but by a set amount in a Direction
+ * <p>
+ * Performs the same operation as translate(x, y, z), but by a set amount in a Direction
+ * <p>
+ * Adjusts the position for the given direction to match that as the entity
+ * <p>
+ * Returns the distance between this and the defined Pos3D.
+ * @param pos - the Pos3D to find the distance to
+ * @return the distance between this and the defined Pos3D
+ * <p>
+ * Rotates this Pos3D by the defined yaw value.
+ * @param yaw - yaw to rotate by
+ * @return rotated Pos3D
+ * <p>
+ * Scales this Pos3D by the defined x, y, an z values.
+ * @param x - x value to scale by
+ * @param y - y value to scale by
+ * @param z - z value to scale by
+ * @return scaled Pos3D
+ *//*
     public Pos3D(Entity entity) {
         this(entity.getX(), entity.getY(), entity.getZ());
     }
@@ -37,12 +85,12 @@ public class Pos3D extends Vector3d {
     }
 
     *//**
-     * Returns a new Pos3D from a tag compound.
-     *
-     * @param tag - tag compound to read from
-     *
-     * @return the Pos3D from the tag compound
-     *//*
+ * Returns a new Pos3D from a tag compound.
+ *
+ * @param tag - tag compound to read from
+ *
+ * @return the Pos3D from the tag compound
+ *//*
     public static Pos3D read(Tag tag) {
         return new Pos3D(tag.getDouble("x"), tag.getDouble("y"), tag.getDouble("z"));
     }
@@ -67,12 +115,12 @@ public class Pos3D extends Vector3d {
     }
 
     *//**
-     * Writes this Pos3D's data to an CompoundNBT.
-     *
-     * @param nbtTags - tag compound to write to
-     *
-     * @return the tag compound with this Pos3D's data
-     *//*
+ * Writes this Pos3D's data to an CompoundNBT.
+ *
+ * @param nbtTags - tag compound to write to
+ *
+ * @return the tag compound with this Pos3D's data
+ *//*
     public CompoundNBT write(CompoundNBT nbtTags) {
         nbtTags.putDouble("x", x);
         nbtTags.putDouble("y", y);
@@ -81,55 +129,55 @@ public class Pos3D extends Vector3d {
     }
 
     *//**
-     * Creates and returns a Pos3D with values representing the difference between this and the Pos3D in the parameters.
-     *
-     * @param vec - Vec3 to subtract
-     *
-     * @return difference of the two Pos3Ds
-     *//*
+ * Creates and returns a Pos3D with values representing the difference between this and the Pos3D in the parameters.
+ *
+ * @param vec - Vec3 to subtract
+ *
+ * @return difference of the two Pos3Ds
+ *//*
     public Pos3D diff(Vector3d vec) {
         return new Pos3D(x - vec.x, y - vec.y, z - vec.z);
     }
 
 
     *//**
-     * Centres a block-derived Pos3D
-     *//*
+ * Centres a block-derived Pos3D
+ *//*
     public Pos3D centre() {
         return translate(0.5, 0.5, 0.5);
     }
 
     *//**
-     * Translates this Pos3D by the defined values.
-     *
-     * @param x - amount to translate on the x axis
-     * @param y - amount to translate on the y axis
-     * @param z - amount to translate on the z axis
-     *
-     * @return the translated Pos3D
-     *//*
+ * Translates this Pos3D by the defined values.
+ *
+ * @param x - amount to translate on the x axis
+ * @param y - amount to translate on the y axis
+ * @param z - amount to translate on the z axis
+ *
+ * @return the translated Pos3D
+ *//*
     public Pos3D translate(double x, double y, double z) {
         return new Pos3D(this.x + x, this.y + y, this.z + z);
     }
 
     *//**
-     * Performs the same operation as translate(x, y, z), but with a Pos3D value instead.
-     *
-     * @param pos - Pos3D value to translate by
-     *
-     * @return translated Pos3D
-     *//*
+ * Performs the same operation as translate(x, y, z), but with a Pos3D value instead.
+ *
+ * @param pos - Pos3D value to translate by
+ *
+ * @return translated Pos3D
+ *//*
     public Pos3D translate(Vector3d pos) {
         return translate(pos.x, pos.y, pos.z);
     }
 
     *//**
-     * Performs the same operation as translate(x, y, z), but with multiple Pos3Ds to avoid having to create intermediary objects.
-     *
-     * @param positions - Pos3D values to translate by
-     *
-     * @return translated Pos3D
-     *//*
+ * Performs the same operation as translate(x, y, z), but with multiple Pos3Ds to avoid having to create intermediary objects.
+ *
+ * @param positions - Pos3D values to translate by
+ *
+ * @return translated Pos3D
+ *//*
     public Pos3D translate(Vector3d... positions) {
         double x = this.x;
         double y = this.y;
@@ -143,15 +191,15 @@ public class Pos3D extends Vector3d {
     }
 
     *//**
-     * Performs the same operation as translate(x, y, z), but by a set amount in a Direction
-     *//*
+ * Performs the same operation as translate(x, y, z), but by a set amount in a Direction
+ *//*
     public Pos3D translate(Direction direction, double amount) {
         return translate(direction.getNormal().getX() * amount, direction.getNormal().getY() * amount, direction.getNormal().getZ() * amount);
     }
 
     *//**
-     * Performs the same operation as translate(x, y, z), but by a set amount in a Direction
-     *//*
+ * Performs the same operation as translate(x, y, z), but by a set amount in a Direction
+ *//*
     public Pos3D translateExcludingSide(Direction direction, double amount) {
         double xPos = x, yPos = y, zPos = z;
         if (direction.getAxis() != Axis.X) {
@@ -167,8 +215,8 @@ public class Pos3D extends Vector3d {
     }
 
     *//**
-     * Adjusts the position for the given direction to match that as the entity
-     *//*
+ * Adjusts the position for the given direction to match that as the entity
+ *//*
     public Pos3D adjustPosition(Direction direction, Entity entity) {
         if (direction.getAxis() == Axis.X) {
             return new Pos3D(entity.getX(), y, z);
@@ -179,12 +227,12 @@ public class Pos3D extends Vector3d {
     }
 
     *//**
-     * Returns the distance between this and the defined Pos3D.
-     *
-     * @param pos - the Pos3D to find the distance to
-     *
-     * @return the distance between this and the defined Pos3D
-     *//*
+ * Returns the distance between this and the defined Pos3D.
+ *
+ * @param pos - the Pos3D to find the distance to
+ *
+ * @return the distance between this and the defined Pos3D
+ *//*
     public double distance(Vector3d pos) {
         double subX = x - pos.x;
         double subY = y - pos.y;
@@ -193,12 +241,12 @@ public class Pos3D extends Vector3d {
     }
 
     *//**
-     * Rotates this Pos3D by the defined yaw value.
-     *
-     * @param yaw - yaw to rotate by
-     *
-     * @return rotated Pos3D
-     *//*
+ * Rotates this Pos3D by the defined yaw value.
+ *
+ * @param yaw - yaw to rotate by
+ *
+ * @return rotated Pos3D
+ *//*
     @Nonnull
     @Override
     public Pos3D yRot(float yaw) {
@@ -255,14 +303,14 @@ public class Pos3D extends Vector3d {
     }
 
     *//**
-     * Scales this Pos3D by the defined x, y, an z values.
-     *
-     * @param x - x value to scale by
-     * @param y - y value to scale by
-     * @param z - z value to scale by
-     *
-     * @return scaled Pos3D
-     *//*
+ * Scales this Pos3D by the defined x, y, an z values.
+ *
+ * @param x - x value to scale by
+ * @param y - y value to scale by
+ * @param z - z value to scale by
+ *
+ * @return scaled Pos3D
+ *//*
     @Nonnull
     @Override
     public Pos3D multiply(double x, double y, double z) {

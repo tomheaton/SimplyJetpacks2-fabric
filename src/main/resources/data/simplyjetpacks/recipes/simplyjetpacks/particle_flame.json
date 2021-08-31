@@ -6,8 +6,12 @@
     " t "
   ],
   "key": {
-    "p": { "item": "simplyjetpacks:particle_blend" },
-    "t": { "item": "minecraft:torch" }
+    "p": {
+      "item": "simplyjetpacks:particle_blend"
+    },
+    "t": {
+      "item": "minecraft:torch"
+    }
   },
   "result": {
     "item": "simplyjetpacks:particle_flame",

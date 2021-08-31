@@ -1,5 +1,6 @@
 package stormedpanda.simplyjetpacks.model;
 
+import com.google.common.collect.ImmutableList;
 import net.minecraft.client.model.ModelPart;
 import net.minecraft.client.render.VertexConsumer;
 import net.minecraft.client.render.entity.model.BipedEntityModel;
@@ -8,7 +9,6 @@ import net.minecraft.entity.LivingEntity;
 
 public class JetpackModelFabric extends BipedEntityModel<LivingEntity> {
 
-    private final ModelPart jetpack;
     private final ModelPart middle;
     private final ModelPart leftTip1;
     private final ModelPart leftTip2;
@@ -26,73 +26,133 @@ public class JetpackModelFabric extends BipedEntityModel<LivingEntity> {
         textureWidth = 64;
         textureHeight = 64;
 
-        jetpack = new ModelPart(this);
-        jetpack.setPivot(0.0F, 24.0F, 0.0F);
-
         middle = new ModelPart(this);
         middle.setPivot(0.0F, 0.0F, 0.0F);
-        jetpack.addChild(middle);
-        middle.setTextureOffset(0, 54).addCuboid(-2.0F, -8.0F, 3.6F, 4.0F, 5.0F, 2.0F, 0.0F, true);
+        middle.setTextureOffset(0, 54);
+        middle.mirror = true;
 
         leftTip1 = new ModelPart(this);
         leftTip1.setPivot(0.0F, 0.0F, 0.0F);
-        jetpack.addChild(leftTip1);
-        leftTip1.setTextureOffset(0, 45).addCuboid(-4.0F, -2.0F, 3.1F, 3.0F, 1.0F, 3.0F, 0.0F, true);
+        leftTip1.mirror = true;
+        leftTip1.setTextureOffset(0, 45);
 
         leftTip2 = new ModelPart(this);
         leftTip2.setPivot(0.0F, 0.0F, 0.0F);
-        jetpack.addChild(leftTip2);
-        leftTip2.setTextureOffset(0, 49).addCuboid(-3.5F, -1.0F, 3.6F, 2.0F, 2.0F, 2.0F, 0.0F, true);
+        leftTip2.mirror = true;
+        leftTip2.setTextureOffset(0, 49);
 
         rightTip1 = new ModelPart(this);
         rightTip1.setPivot(0.0F, 0.0F, 0.0F);
-        jetpack.addChild(rightTip1);
-        rightTip1.setTextureOffset(17, 45).addCuboid(1.0F, -2.0F, 3.1F, 3.0F, 1.0F, 3.0F, 0.0F, true);
-
+        rightTip1.mirror = true;
+        rightTip1.setTextureOffset(17, 45);
         rightTip2 = new ModelPart(this);
         rightTip2.setPivot(0.0F, 0.0F, 0.0F);
-        jetpack.addChild(rightTip2);
-        rightTip2.setTextureOffset(17, 49).addCuboid(1.5F, -1.0F, 3.6F, 2.0F, 2.0F, 2.0F, 0.0F, true);
+        rightTip2.mirror = true;
+        rightTip2.setTextureOffset(17, 49);
 
         leftCanister = new ModelPart(this);
         leftCanister.setPivot(0.0F, 0.0F, 0.0F);
-        jetpack.addChild(leftCanister);
-        leftCanister.setTextureOffset(0, 32).addCuboid(-4.5F, -9.0F, 2.6F, 4.0F, 7.0F, 4.0F, 0.0F, true);
+        leftCanister.mirror = true;
+        leftCanister.setTextureOffset(0, 32);
 
         rightCanister = new ModelPart(this);
         rightCanister.setPivot(0.0F, 0.0F, 0.0F);
-        jetpack.addChild(rightCanister);
-        rightCanister.setTextureOffset(17, 32).addCuboid(0.5F, -9.0F, 2.6F, 4.0F, 7.0F, 4.0F, 0.0F, true);
+        rightCanister.mirror = true;
+        rightCanister.setTextureOffset(17, 32);
 
         leftExhaust1 = new ModelPart(this);
         leftExhaust1.setPivot(0.0F, 0.0F, 0.0F);
-        jetpack.addChild(leftExhaust1);
-        leftExhaust1.setTextureOffset(35, 32).addCuboid(-4.0F, -10.0F, 3.1F, 3.0F, 1.0F, 3.0F, 0.0F, true);
+        leftExhaust1.mirror = true;
+        leftExhaust1.setTextureOffset(35, 32);
 
         leftExhaust2 = new ModelPart(this);
         leftExhaust2.setPivot(0.0F, 0.0F, 0.0F);
-        jetpack.addChild(leftExhaust2);
-        leftExhaust2.setTextureOffset(35, 37).addCuboid(-4.5F, -13.0F, 2.6F, 4.0F, 3.0F, 4.0F, 0.0F, true);
+        leftExhaust2.mirror = true;
+        leftExhaust2.setTextureOffset(35, 37);
 
         rightExhaust1 = new ModelPart(this);
         rightExhaust1.setPivot(0.0F, 0.0F, 0.0F);
-        jetpack.addChild(rightExhaust1);
-        rightExhaust1.setTextureOffset(48, 32).addCuboid(1.0F, -10.0F, 3.1F, 3.0F, 1.0F, 3.0F, 0.0F, true);
+        rightExhaust1.mirror = true;
+        rightExhaust1.setTextureOffset(48, 32);
 
         rightExhaust2 = new ModelPart(this);
         rightExhaust2.setPivot(0.0F, 0.0F, 0.0F);
-        jetpack.addChild(rightExhaust2);
-        rightExhaust2.setTextureOffset(35, 45).addCuboid(0.5F, -13.0F, 2.6F, 4.0F, 3.0F, 4.0F, 0.0F, true);
+        rightExhaust2.mirror = true;
+        rightExhaust2.setTextureOffset(35, 45);
+
+        setupCustomModel();
+    }
+
+    private void setupCustomModel() {
+        torso.addChild(middle);
+        middle.addCuboid(-2F, 3F, 3.6F, 4, 5, 2);
+        torso.addChild(leftCanister);
+        leftCanister.addCuboid(0.5F, 2F, 2.6F, 4, 7, 4);
+        torso.addChild(rightCanister);
+        rightCanister.addCuboid(-4.5F, 2F, 2.6F, 4, 7, 4);
+        torso.addChild(leftTip1);
+        leftTip1.addCuboid(1F, 1F, 3.1F, 3, 1, 3);
+        torso.addChild(leftTip2);
+        leftTip2.addCuboid(1.5F, -1F, 3.6F, 2, 2, 2);
+        torso.addChild(rightTip1);
+        rightTip1.addCuboid(-4F, 1F, 3.1F, 3, 1, 3);
+        torso.addChild(rightTip2);
+        rightTip2.addCuboid(-3.5F, -1F, 3.6F, 2, 2, 2);
+        torso.addChild(leftExhaust1);
+        leftExhaust1.addCuboid(1F, 9F, 3.1F, 3, 1, 3);
+        torso.addChild(leftExhaust2);
+        leftExhaust2.addCuboid(0.5F, 10F, 2.6F, 4, 3, 4);
+        torso.addChild(rightExhaust1);
+        rightExhaust1.addCuboid(-4F, 9F, 3.1F, 3, 1, 3);
+        torso.addChild(rightExhaust2);
+        rightExhaust2.addCuboid(-4.5F, 10F, 2.6F, 4, 3, 4);
     }
 
     @Override
-    public void setAngles(LivingEntity entity, float limbSwing, float limbSwingAmount, float ageInTicks, float netHeadYaw, float headPitch){
+    protected Iterable<ModelPart> getHeadParts() {
+        return ImmutableList.of();
+    }
+
+    @Override
+    protected Iterable<ModelPart> getBodyParts() {
+        this.middle.copyPositionAndRotation(this.torso);
+        this.leftCanister.copyPositionAndRotation(this.middle);
+        this.rightCanister.copyPositionAndRotation(this.middle);
+        this.leftTip1.copyPositionAndRotation(this.middle);
+        this.leftTip2.copyPositionAndRotation(this.middle);
+        this.rightTip1.copyPositionAndRotation(this.middle);
+        this.rightTip2.copyPositionAndRotation(this.middle);
+        this.leftExhaust1.copyPositionAndRotation(this.middle);
+        this.leftExhaust2.copyPositionAndRotation(this.middle);
+        this.rightExhaust1.copyPositionAndRotation(this.middle);
+        this.rightExhaust2.copyPositionAndRotation(this.middle);
+
+        return ImmutableList.of(
+                this.torso,
+                this.middle,
+                this.leftCanister,
+                this.rightCanister,
+                this.leftTip1,
+                this.leftTip2,
+                this.rightTip1,
+                this.rightTip2,
+                this.leftExhaust1,
+                this.leftExhaust2,
+                this.rightExhaust1,
+                this.rightExhaust2,
+                this.leftArm,
+                this.rightArm
+        );
+    }
+
+    @Override
+    public void setAngles(LivingEntity entity, float limbSwing, float limbSwingAmount, float ageInTicks, float netHeadYaw, float headPitch) {
         //previously the render function, render code was moved to a method below
     }
 
     @Override
-    public void render(MatrixStack matrixStack, VertexConsumer buffer, int packedLight, int packedOverlay, float red, float green, float blue, float alpha){
-        jetpack.render(matrixStack, buffer, packedLight, packedOverlay);
+    public void render(MatrixStack matrixStack, VertexConsumer buffer, int packedLight, int packedOverlay, float red, float green, float blue, float alpha) {
+        super.render(matrixStack, buffer, packedLight, packedOverlay, red, green, blue, alpha);
     }
 
     public void setRotationAngle(ModelPart part, float x, float y, float z) {

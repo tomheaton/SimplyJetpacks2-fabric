@@ -6,9 +6,15 @@
     "dbd"
   ],
   "key": {
-    "d": { "item": "minecraft:diamond" },
-    "f": { "item": "minecraft:furnace" },
-    "b": { "item": "minecraft:blaze_powder"}
+    "d": {
+      "item": "minecraft:diamond"
+    },
+    "f": {
+      "item": "minecraft:furnace"
+    },
+    "b": {
+      "item": "minecraft:blaze_powder"
+    }
   },
   "result": {
     "item": "simplyjetpacks:thruster_vanilla3",

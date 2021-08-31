@@ -24,12 +24,16 @@ import java.util.UUID;
 @Mixin(ArmorItem.class)
 public abstract class ArmorItemMixin {
 
-    @Shadow @Final
+    @Shadow
+    @Final
     private static UUID[] MODIFIERS;
-    @Shadow @Final @Mutable
-    private Multimap<EntityAttribute, EntityAttributeModifier> attributeModifiers;
-    @Shadow @Final
+    @Shadow
+    @Final
     protected float knockbackResistance;
+    @Shadow
+    @Final
+    @Mutable
+    private Multimap<EntityAttribute, EntityAttributeModifier> attributeModifiers;
 
     @Inject(method = "<init>", at = @At(value = "RETURN"))
     private void constructor(ArmorMaterial material, EquipmentSlot slot, Item.Settings settings, CallbackInfo ci) {

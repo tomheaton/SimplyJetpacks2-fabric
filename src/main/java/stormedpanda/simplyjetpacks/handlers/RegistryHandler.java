@@ -39,7 +39,7 @@ public class RegistryHandler {
     public static SJItem THRUSTER_VANILLA2;
     public static SJItem THRUSTER_VANILLA3;
     public static SJItem THRUSTER_VANILLA4;
-    
+
     public static void init() {
         SimplyJetpacks.LOGGER.info("Initializing Registry Items");
 

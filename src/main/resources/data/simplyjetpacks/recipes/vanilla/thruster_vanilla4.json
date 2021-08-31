@@ -6,9 +6,15 @@
     "nbn"
   ],
   "key": {
-    "n": { "item": "minecraft:netherite_ingot" },
-    "f": { "item": "minecraft:furnace" },
-    "b": { "item": "minecraft:blaze_powder"}
+    "n": {
+      "item": "minecraft:netherite_ingot"
+    },
+    "f": {
+      "item": "minecraft:furnace"
+    },
+    "b": {
+      "item": "minecraft:blaze_powder"
+    }
   },
   "result": {
     "item": "simplyjetpacks:thruster_vanilla4",

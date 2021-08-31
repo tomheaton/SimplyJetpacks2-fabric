@@ -5,9 +5,15 @@
     "gig"
   ],
   "key": {
-    "s": { "item": "simplyjetpacks:leather_strap" },
-    "i": { "item": "minecraft:iron_ingot" },
-    "g": { "item": "minecraft:glass_pane" }
+    "s": {
+      "item": "simplyjetpacks:leather_strap"
+    },
+    "i": {
+      "item": "minecraft:iron_ingot"
+    },
+    "g": {
+      "item": "minecraft:glass_pane"
+    }
   },
   "result": {
     "item": "simplyjetpacks:pilot_goggles_iron",

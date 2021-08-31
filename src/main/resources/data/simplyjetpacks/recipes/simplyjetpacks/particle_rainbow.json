@@ -6,10 +6,18 @@
     "g b"
   ],
   "key": {
-    "p": { "item": "simplyjetpacks:particle_blend" },
-    "r": { "item": "minecraft:red_dye" },
-    "g": { "item": "minecraft:green_dye" },
-    "b": { "item": "minecraft:blue_dye" }
+    "p": {
+      "item": "simplyjetpacks:particle_blend"
+    },
+    "r": {
+      "item": "minecraft:red_dye"
+    },
+    "g": {
+      "item": "minecraft:green_dye"
+    },
+    "b": {
+      "item": "minecraft:blue_dye"
+    }
   },
   "result": {
     "item": "simplyjetpacks:particle_rainbow",

@@ -20,8 +20,8 @@ import java.util.List;
 
 public class JetpackItem extends ArmorItem implements IHUDInfoProvider {//, IEnergyContainer {
 
-    private final JetpackType jetpackType;
     public final int tier;
+    private final JetpackType jetpackType;
 
     public JetpackItem(JetpackType jetpackType) {
         super(JetpackArmorMaterial.JETPACK, EquipmentSlot.CHEST, new Settings().group(SimplyJetpacks.tabSimplyJetpacks));
@@ -45,6 +45,21 @@ public class JetpackItem extends ArmorItem implements IHUDInfoProvider {//, IEne
         }
     }*/
 
+    public static ItemStack setParticleId(ItemStack stack, ItemStack particle) {
+/*        String key = particle.getDescriptionId().split("item.simplyjetpacks.particle_")[1].toUpperCase();
+        int id = JetpackParticleType.valueOf(key).ordinal();
+        NBTUtil.setInt(stack, Constants.TAG_PARTICLE, id);*/
+        return stack;
+    }
+
+    public static void setParticleId(ItemStack stack, int id) {
+        NBTUtil.setInt(stack, Constants.TAG_PARTICLE, id);
+    }
+
+    public static int getParticleId(ItemStack stack) {
+        return stack.getOrCreateTag().contains(Constants.TAG_PARTICLE) ? stack.getOrCreateTag().getInt(Constants.TAG_PARTICLE) : JetpackType.getDefaultParticles(stack);
+    }
+
     public JetpackType getJetpackType() {
         return jetpackType;
     }
@@ -60,7 +75,7 @@ public class JetpackItem extends ArmorItem implements IHUDInfoProvider {//, IEne
 
     @Override
     public boolean hasGlint(ItemStack stack) {
-        return super.hasGlint(stack)|| isCreative();
+        return super.hasGlint(stack) || isCreative();
     }
 
     @Override
@@ -116,28 +131,6 @@ public class JetpackItem extends ArmorItem implements IHUDInfoProvider {//, IEne
         }
     }
 
-    private void doEHover(ItemStack stack, PlayerEntity player) {
-        if (jetpackType.getHoverMode()) {
-            NBTUtil.setBoolean(stack, Constants.TAG_ENGINE, true);
-            NBTUtil.setBoolean(stack, Constants.TAG_HOVER, true);
-            Text msg = SJTextUtil.getEmergencyText();
-            player.sendMessage(msg, true);
-        }
-    }
-
-    public boolean isChargerOn(ItemStack stack) {
-        return NBTUtil.getBoolean(stack, Constants.TAG_CHARGER);
-    }
-
-    public void toggleCharger(ItemStack stack, PlayerEntity player) {
-        if (jetpackType.getChargerMode()) {
-            boolean current = NBTUtil.getBoolean(stack, Constants.TAG_CHARGER);
-            NBTUtil.flipBoolean(stack, Constants.TAG_CHARGER);
-            Text msg = SJTextUtil.getStateToggle("chargerMode", !current);
-            player.sendMessage(msg, true);
-        }
-    }
-
 /*    public static float getChargeRatio(ItemStack stack) {
         LazyOptional<IEnergyStorage> optional = stack.getCapability(CapabilityEnergy.ENERGY);
         if (optional.isPresent()) {
@@ -161,14 +154,12 @@ public class JetpackItem extends ArmorItem implements IHUDInfoProvider {//, IEne
         };
     }*/
 
-    @Override
-    public void appendTooltip(ItemStack stack, @Nullable World world, List<Text> tooltip, TooltipContext context) {
-        //if (CapabilityEnergy.ENERGY == null) return;
-        SJTextUtil.addBaseInfo(stack, tooltip);
-        if (KeyboardUtil.isHoldingShift()) {
-            SJTextUtil.addShiftInfo(stack, tooltip);
-        } else {
-            tooltip.add(SJTextUtil.getShiftText());
+    private void doEHover(ItemStack stack, PlayerEntity player) {
+        if (jetpackType.getHoverMode()) {
+            NBTUtil.setBoolean(stack, Constants.TAG_ENGINE, true);
+            NBTUtil.setBoolean(stack, Constants.TAG_HOVER, true);
+            Text msg = SJTextUtil.getEmergencyText();
+            player.sendMessage(msg, true);
         }
     }
 
@@ -202,6 +193,30 @@ public class JetpackItem extends ArmorItem implements IHUDInfoProvider {//, IEne
         }
     }*/
 
+    public boolean isChargerOn(ItemStack stack) {
+        return NBTUtil.getBoolean(stack, Constants.TAG_CHARGER);
+    }
+
+    public void toggleCharger(ItemStack stack, PlayerEntity player) {
+        if (jetpackType.getChargerMode()) {
+            boolean current = NBTUtil.getBoolean(stack, Constants.TAG_CHARGER);
+            NBTUtil.flipBoolean(stack, Constants.TAG_CHARGER);
+            Text msg = SJTextUtil.getStateToggle("chargerMode", !current);
+            player.sendMessage(msg, true);
+        }
+    }
+
+    @Override
+    public void appendTooltip(ItemStack stack, @Nullable World world, List<Text> tooltip, TooltipContext context) {
+        //if (CapabilityEnergy.ENERGY == null) return;
+        SJTextUtil.addBaseInfo(stack, tooltip);
+        if (KeyboardUtil.isHoldingShift()) {
+            SJTextUtil.addShiftInfo(stack, tooltip);
+        } else {
+            tooltip.add(SJTextUtil.getShiftText());
+        }
+    }
+
     private void setEnergyStored(ItemStack container, int value) {
         //NBTUtil.setInt(container, Constants.TAG_ENERGY, MathHelper.clamp(value, 0, getCapacity(container)));
     }
@@ -212,21 +227,6 @@ public class JetpackItem extends ArmorItem implements IHUDInfoProvider {//, IEne
 
     public int getEnergyExtract() {
         return jetpackType.getEnergyUsage();
-    }
-
-    public static ItemStack setParticleId(ItemStack stack, ItemStack particle) {
-/*        String key = particle.getDescriptionId().split("item.simplyjetpacks.particle_")[1].toUpperCase();
-        int id = JetpackParticleType.valueOf(key).ordinal();
-        NBTUtil.setInt(stack, Constants.TAG_PARTICLE, id);*/
-        return stack;
-    }
-
-    public static void setParticleId(ItemStack stack, int id) {
-        NBTUtil.setInt(stack, Constants.TAG_PARTICLE, id);
-    }
-
-    public static int getParticleId(ItemStack stack) {
-        return stack.getOrCreateTag().contains(Constants.TAG_PARTICLE) ? stack.getOrCreateTag().getInt(Constants.TAG_PARTICLE) : JetpackType.getDefaultParticles(stack);
     }
 
     /*@Nullable

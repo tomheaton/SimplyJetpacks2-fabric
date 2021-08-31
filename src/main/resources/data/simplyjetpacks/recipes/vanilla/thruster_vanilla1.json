@@ -6,9 +6,15 @@
     "ibi"
   ],
   "key": {
-    "i": { "item": "minecraft:iron_ingot" },
-    "f": { "item": "minecraft:furnace" },
-    "b": { "item": "minecraft:blaze_powder"}
+    "i": {
+      "item": "minecraft:iron_ingot"
+    },
+    "f": {
+      "item": "minecraft:furnace"
+    },
+    "b": {
+      "item": "minecraft:blaze_powder"
+    }
   },
   "result": {
     "item": "simplyjetpacks:thruster_vanilla1",

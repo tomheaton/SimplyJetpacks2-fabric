@@ -6,8 +6,12 @@
     " g "
   ],
   "key": {
-    "p": { "item": "simplyjetpacks:particle_blend" },
-    "g": { "item": "minecraft:glass"}
+    "p": {
+      "item": "simplyjetpacks:particle_blend"
+    },
+    "g": {
+      "item": "minecraft:glass"
+    }
   },
   "result": {
     "item": "simplyjetpacks:particle_none",

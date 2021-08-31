@@ -1,7 +1,7 @@
 package stormedpanda.simplyjetpacks.util;
 
 public class Constants {
-    
+
     public static final String TAG_ENERGY = "Energy";
     public static final String TAG_ENGINE = "Engine";
     public static final String TAG_HOVER = "Hover";

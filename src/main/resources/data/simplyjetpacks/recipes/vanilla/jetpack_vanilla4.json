@@ -6,10 +6,18 @@
     "t t"
   ],
   "key": {
-    "n": { "item": "minecraft:netherite_ingot" },
-    "r": { "item": "minecraft:redstone_block" },
-    "j": { "item": "simplyjetpacks:jetpack_vanilla3" },
-    "t": { "item": "simplyjetpacks:thruster_vanilla4" }
+    "n": {
+      "item": "minecraft:netherite_ingot"
+    },
+    "r": {
+      "item": "minecraft:redstone_block"
+    },
+    "j": {
+      "item": "simplyjetpacks:jetpack_vanilla3"
+    },
+    "t": {
+      "item": "simplyjetpacks:thruster_vanilla4"
+    }
   },
   "result": {
     "item": "simplyjetpacks:jetpack_vanilla4",
