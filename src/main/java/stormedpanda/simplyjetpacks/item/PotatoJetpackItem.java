@@ -1,13 +1,16 @@
 package stormedpanda.simplyjetpacks.item;
 
 import net.minecraft.client.item.TooltipContext;
+import net.minecraft.entity.Entity;
+import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.ItemStack;
+import net.minecraft.sound.SoundCategory;
 import net.minecraft.text.Text;
 import net.minecraft.util.Formatting;
 import net.minecraft.world.World;
 import org.jetbrains.annotations.Nullable;
-import stormedpanda.simplyjetpacks.util.KeyboardUtil;
-import stormedpanda.simplyjetpacks.util.SJTextUtil;
+import stormedpanda.simplyjetpacks.sound.SJSoundEvents;
+import stormedpanda.simplyjetpacks.util.*;
 
 import java.util.List;
 
@@ -29,21 +32,45 @@ public class PotatoJetpackItem extends JetpackItem {
         }
     }
 
-    /*@Nullable
     @Override
-    public <A extends BipedModel<?>> A getArmorModel(LivingEntity entityLiving, ItemStack itemStack, EquipmentSlotType armorSlot, A _default) {
-        return null;
-    }
-
-    @Override
-    public void onArmorTick(ItemStack stack, World world, PlayerEntity player) {
-        if (!player.isSpectator() && stack == JetpackUtil.getFromBothSlots(player)) {
-            this.flyUser(player, stack, this, true);
-            if (getJetpackType().getChargerMode() && this.isChargerOn(stack)) {
-                super.chargeInventory(player, stack);
+    public void inventoryTick(ItemStack stack, World world, Entity entity, int slot, boolean selected) {
+        if (entity instanceof PlayerEntity) {
+            PlayerEntity player = (PlayerEntity) entity;
+            if (!player.isSpectator() && stack == JetpackUtil.getFromBothSlots(player)) {
+                //this.flyUser(player, stack, this, true);
+                if (getJetpackType().getChargerMode() && this.isChargerOn(stack)) {
+                    //super.chargeInventory(player, stack);
+                }
             }
         }
-    }*/
+    }
+
+    public boolean isFired(ItemStack itemStack) {
+        return NBTUtil.getBoolean(itemStack, Constants.TAG_FIRED);
+    }
+
+    private void setFired(ItemStack itemStack) {
+        NBTUtil.setBoolean(itemStack, Constants.TAG_FIRED, true);
+    }
+
+    private boolean isTimerSet(ItemStack itemStack) {
+        return NBTUtil.getBoolean(itemStack, Constants.TAG_ROCKET_TIMER_SET);
+    }
+
+    private void setTimer(ItemStack itemStack, int timer) {
+        NBTUtil.setInt(itemStack, Constants.TAG_ROCKET_TIMER, timer);
+        NBTUtil.setBoolean(itemStack, Constants.TAG_ROCKET_TIMER_SET, true);
+    }
+
+    private void decrementTimer(ItemStack itemStack, PlayerEntity player) {
+        int timer = NBTUtil.getInt(itemStack, Constants.TAG_ROCKET_TIMER);
+        timer = timer > 0 ? timer - 1 : 0;
+        NBTUtil.setInt(itemStack, Constants.TAG_ROCKET_TIMER, timer);
+        if (timer == 0) {
+            this.setFired(itemStack);
+            player.world.playSound(player, player.getBlockPos(), SJSoundEvents.ROCKET, SoundCategory.PLAYERS, 1F, 1F);
+        }
+    }
 
 /*    @Override
     public void flyUser(PlayerEntity player, ItemStack stack, JetpackItem item, Boolean force) {
@@ -77,31 +104,5 @@ public class PotatoJetpackItem extends JetpackItem {
             }
         }
     }
-
-    public boolean isFired(ItemStack itemStack) {
-        return NBTUtil.getBoolean(itemStack, Constants.TAG_FIRED);
-    }
-
-    private void setFired(ItemStack itemStack) {
-        NBTUtil.setBoolean(itemStack, Constants.TAG_FIRED, true);
-    }
-
-    private boolean isTimerSet(ItemStack itemStack) {
-        return NBTUtil.getBoolean(itemStack, Constants.TAG_ROCKET_TIMER_SET);
-    }
-
-    private void setTimer(ItemStack itemStack, int timer) {
-        NBTUtil.setInt(itemStack, Constants.TAG_ROCKET_TIMER, timer);
-        NBTUtil.setBoolean(itemStack, Constants.TAG_ROCKET_TIMER_SET, true);
-    }
-
-    private void decrementTimer(ItemStack itemStack, PlayerEntity player) {
-        int timer = NBTUtil.getInt(itemStack, Constants.TAG_ROCKET_TIMER);
-        timer = timer > 0 ? timer - 1 : 0;
-        NBTUtil.setInt(itemStack, Constants.TAG_ROCKET_TIMER, timer);
-        if (timer == 0) {
-            this.setFired(itemStack);
-            player.level.playSound(player, player, SJSounds.ROCKET, SoundCategory.PLAYERS, 1F, 1F);
-        }
     }*/
 }

@@ -1,6 +1,7 @@
 package stormedpanda.simplyjetpacks.item;
 
 import net.minecraft.client.item.TooltipContext;
+import net.minecraft.entity.Entity;
 import net.minecraft.entity.EquipmentSlot;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.ArmorItem;
@@ -11,10 +12,7 @@ import net.minecraft.world.World;
 import org.jetbrains.annotations.Nullable;
 import stormedpanda.simplyjetpacks.SimplyJetpacks;
 import stormedpanda.simplyjetpacks.hud.IHUDInfoProvider;
-import stormedpanda.simplyjetpacks.util.Constants;
-import stormedpanda.simplyjetpacks.util.KeyboardUtil;
-import stormedpanda.simplyjetpacks.util.NBTUtil;
-import stormedpanda.simplyjetpacks.util.SJTextUtil;
+import stormedpanda.simplyjetpacks.util.*;
 
 import java.util.List;
 
@@ -35,15 +33,19 @@ public class JetpackItem extends ArmorItem implements IHUDInfoProvider {//, IEne
         this.tier = jetpackType.getTier();
     }
 
-    /*@Override
-    public void onArmorTick(ItemStack stack, World world, PlayerEntity player) {
-        if (!player.isSpectator() && stack == JetpackUtil.getFromBothSlots(player)) {
-            flyUser(player, stack, this, false);
-            if (this.jetpackType.getChargerMode() && this.isChargerOn(stack)) {
-                chargeInventory(player, stack);
+    @Override
+    public void inventoryTick(ItemStack stack, World world, Entity entity, int slot, boolean selected) {
+        if (entity instanceof PlayerEntity) {
+            PlayerEntity player = (PlayerEntity) entity;
+            if (!player.isSpectator() && stack == JetpackUtil.getFromBothSlots(player)) {
+                //flyUser(player, stack, this, false);
+                if (this.jetpackType.getChargerMode() && this.isChargerOn(stack)) {
+                    //chargeInventory(player, stack);
+                }
             }
         }
-    }*/
+
+    }
 
     public static ItemStack setParticleId(ItemStack stack, ItemStack particle) {
 /*        String key = particle.getDescriptionId().split("item.simplyjetpacks.particle_")[1].toUpperCase();
