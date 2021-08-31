@@ -1,4 +1,4 @@
-package stormedpanda.simplyjetpacks;
+package stormedpanda.simplyjetpacks.handlers;
 
 import nerdhub.cardinal.components.api.event.ItemComponentCallbackV2;
 import net.fabricmc.api.ClientModInitializer;
@@ -13,7 +13,7 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.text.LiteralText;
 import net.minecraft.util.Identifier;
 import org.lwjgl.glfw.GLFW;
-import stormedpanda.simplyjetpacks.handlers.RegistryHandler;
+import stormedpanda.simplyjetpacks.SimplyJetpacks;
 import stormedpanda.simplyjetpacks.integration.CuriosIntegration;
 import stormedpanda.simplyjetpacks.item.JetpackItem;
 import stormedpanda.simplyjetpacks.model.JetpackModelProvider;
@@ -21,7 +21,7 @@ import stormedpanda.simplyjetpacks.sound.SJSoundEvents;
 import stormedpanda.simplyjetpacks.util.JetpackUtil;
 import top.theillusivec4.curios.api.CuriosComponent;
 
-public class ClientInitialization implements ClientModInitializer {
+public class ClientHandler implements ClientModInitializer {
 
     public static KeyBinding JETPACK_GUI_KEY;
     public static KeyBinding JETPACK_ENGINE_KEY;

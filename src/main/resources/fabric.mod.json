@@ -24,7 +24,7 @@
       "stormedpanda.simplyjetpacks.SimplyJetpacks"
     ],
     "client": [
-      "stormedpanda.simplyjetpacks.ClientInitialization"
+      "stormedpanda.simplyjetpacks.handlers.ClientHandler"
     ],
     "server": [
     ]
