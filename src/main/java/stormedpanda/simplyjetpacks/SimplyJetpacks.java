@@ -19,9 +19,11 @@ public class SimplyJetpacks implements ModInitializer {
     public static final String MODNAME = "Simply Jetpacks 2";
     public static final String VERSION = "${version}";
     public static final Logger LOGGER = LogManager.getLogger();
+
     //public static final SJItemGroup tabSimplyJetpacks = new SJItemGroup();
     public static final ItemGroup tabSimplyJetpacks = FabricItemGroupBuilder.build(new Identifier(MODID, "main"), () -> new ItemStack(RegistryHandler.JETPACK_CREATIVE));
     public static final Identifier JETPACK_SLOT = new Identifier(MODID, "gui/empty_jetpack_slot");
+
     public static SimplyJetpacks INSTANCE;
 
     public static String createItemModelJson(String id, String type) {
@@ -48,7 +50,8 @@ public class SimplyJetpacks implements ModInitializer {
         RegistryHandler.init();
         if (FabricLoader.getInstance().isModLoaded("curios")) {
             CuriosApi.enqueueSlotType(SlotTypeInfo.BuildScheme.REGISTER, SlotTypePreset.HEAD.getInfoBuilder().build());
-            CuriosApi.enqueueSlotType(SlotTypeInfo.BuildScheme.REGISTER, new SlotTypeInfo.Builder("jetpack").size(1).icon(JETPACK_SLOT).build());
+            CuriosApi.enqueueSlotType(SlotTypeInfo.BuildScheme.REGISTER, SlotTypePreset.BACK.getInfoBuilder().build());
+            //CuriosApi.enqueueSlotType(SlotTypeInfo.BuildScheme.REGISTER, new SlotTypeInfo.Builder("jetpack").size(1).icon(JETPACK_SLOT).build());
         }
     }
 }

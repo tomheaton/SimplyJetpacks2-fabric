@@ -1,8 +1,5 @@
 package stormedpanda.simplyjetpacks.config;
 
-import stormedpanda.simplyjetpacks.SimplyJetpacks;
-import stormedpanda.simplyjetpacks.item.JetpackType;
-
 public class SimplyJetpacksConfig {
 
     /*public static final Builder CLIENT_BUILDER = new Builder();

@@ -1,0 +1,15 @@
+{
+  "replace": false,
+  "values": [
+    "simplyjetpacks:jetpack_creative",
+    "simplyjetpacks:jetpack_creative_armored",
+    "simplyjetpacks:jetpack_vanilla1",
+    "simplyjetpacks:jetpack_vanilla1_armored",
+    "simplyjetpacks:jetpack_vanilla2",
+    "simplyjetpacks:jetpack_vanilla2_armored",
+    "simplyjetpacks:jetpack_vanilla3",
+    "simplyjetpacks:jetpack_vanilla3_armored",
+    "simplyjetpacks:jetpack_vanilla4",
+    "simplyjetpacks:jetpack_vanilla4_armored"
+  ]
+}
