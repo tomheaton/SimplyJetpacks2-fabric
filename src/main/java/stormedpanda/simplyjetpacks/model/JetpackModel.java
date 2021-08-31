@@ -7,7 +7,7 @@ import net.minecraft.client.render.entity.model.BipedEntityModel;
 import net.minecraft.client.util.math.MatrixStack;
 import net.minecraft.entity.LivingEntity;
 
-public class JetpackModelFabric extends BipedEntityModel<LivingEntity> {
+public class JetpackModel extends BipedEntityModel<LivingEntity> {
 
     private final ModelPart middle;
     private final ModelPart leftTip1;
@@ -21,7 +21,7 @@ public class JetpackModelFabric extends BipedEntityModel<LivingEntity> {
     private final ModelPart rightExhaust1;
     private final ModelPart rightExhaust2;
 
-    public JetpackModelFabric() {
+    public JetpackModel() {
         super(1F, 0F, 64, 64);
         textureWidth = 64;
         textureHeight = 64;
@@ -109,49 +109,13 @@ public class JetpackModelFabric extends BipedEntityModel<LivingEntity> {
     }
 
     @Override
-    protected Iterable<ModelPart> getHeadParts() {
-        return ImmutableList.of();
-    }
-
-    @Override
-    protected Iterable<ModelPart> getBodyParts() {
-        this.middle.copyPositionAndRotation(this.torso);
-        this.leftCanister.copyPositionAndRotation(this.middle);
-        this.rightCanister.copyPositionAndRotation(this.middle);
-        this.leftTip1.copyPositionAndRotation(this.middle);
-        this.leftTip2.copyPositionAndRotation(this.middle);
-        this.rightTip1.copyPositionAndRotation(this.middle);
-        this.rightTip2.copyPositionAndRotation(this.middle);
-        this.leftExhaust1.copyPositionAndRotation(this.middle);
-        this.leftExhaust2.copyPositionAndRotation(this.middle);
-        this.rightExhaust1.copyPositionAndRotation(this.middle);
-        this.rightExhaust2.copyPositionAndRotation(this.middle);
-
-        return ImmutableList.of(
-                this.torso,
-                this.middle,
-                this.leftCanister,
-                this.rightCanister,
-                this.leftTip1,
-                this.leftTip2,
-                this.rightTip1,
-                this.rightTip2,
-                this.leftExhaust1,
-                this.leftExhaust2,
-                this.rightExhaust1,
-                this.rightExhaust2,
-                this.leftArm,
-                this.rightArm
-        );
-    }
-
-    @Override
     public void setAngles(LivingEntity entity, float limbSwing, float limbSwingAmount, float ageInTicks, float netHeadYaw, float headPitch) {
         //previously the render function, render code was moved to a method below
     }
 
     @Override
     public void render(MatrixStack matrixStack, VertexConsumer buffer, int packedLight, int packedOverlay, float red, float green, float blue, float alpha) {
+        //super.render(matrixStack, buffer, packedLight, packedOverlay, red, green, blue, alpha);
         super.render(matrixStack, buffer, packedLight, packedOverlay, red, green, blue, alpha);
     }
 

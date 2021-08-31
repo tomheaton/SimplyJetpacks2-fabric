@@ -12,6 +12,6 @@ public class JetpackModelProvider implements ArmorRenderingRegistry.ModelProvide
     @NotNull
     @Override
     public BipedEntityModel<LivingEntity> getArmorModel(LivingEntity entity, ItemStack stack, EquipmentSlot slot, BipedEntityModel<LivingEntity> defaultModel) {
-        return new JetpackModelFabric();
+        return new JetpackModel();
     }
 }

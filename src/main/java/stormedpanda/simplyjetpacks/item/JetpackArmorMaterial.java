@@ -7,6 +7,7 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.item.Items;
 import net.minecraft.recipe.Ingredient;
 import net.minecraft.sound.SoundEvent;
+import net.minecraft.util.Identifier;
 
 public enum JetpackArmorMaterial implements ArmorMaterial {
 
@@ -60,8 +61,7 @@ public enum JetpackArmorMaterial implements ArmorMaterial {
 
     @Override
     public SoundEvent getEquipSound() {
-        //return new SoundEvent(new ResourceLocation(equipSound));
-        return null;
+        return new SoundEvent(new Identifier(equipSound));
     }
 
     @Override

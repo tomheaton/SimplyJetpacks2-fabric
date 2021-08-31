@@ -83,17 +83,6 @@ public class JetpackItem extends ArmorItem implements IHUDInfoProvider {//, IEne
         return jetpackType.getRarity();
     }
 
-    public String getModId() {
-        String name = jetpackType.getName();
-        if (name.contains("mek")) {
-            return "mek";
-        } else if (name.contains("ie")) {
-            return "ie";
-        } else {
-            return "sj";
-        }
-    }
-
     public boolean isEngineOn(ItemStack stack) {
         return NBTUtil.getBoolean(stack, Constants.TAG_ENGINE);
     }
