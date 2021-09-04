@@ -1,5 +1,5 @@
-[![CurseForge](http://cf.way2muchnoise.eu/simply-jetpacks-2-fabric.svg)](https://www.curseforge.com/minecraft/mc-mods/simply-jetpacks-2-fabric)
-[![CurseForge](http://cf.way2muchnoise.eu/versions/simply-jetpacks-2-fabric.svg)](https://www.curseforge.com/minecraft/mc-mods/simply-jetpacks-2-fabric)
+[![CurseForge](http://cf.way2muchnoise.eu/521858.svg)](https://www.curseforge.com/minecraft/mc-mods/simply-jetpacks-2-fabric)
+[![CurseForge](http://cf.way2muchnoise.eu/versions/521858.svg)](https://www.curseforge.com/minecraft/mc-mods/simply-jetpacks-2-fabric)
 [![Discord Tomson124](https://img.shields.io/badge/Discord-Tomson124-738bd7.svg?style=flat-square)](https://discord.gg/CcbJjRh)
 [![Discord SimplyJetpacks](https://img.shields.io/badge/Discord-SimplyJetpacks-738bd7.svg?style=flat-square)](https://discord.gg/v5qJysC)
 
